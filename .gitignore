@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Secrets
+.env
+
+# Logs and run outputs
+*.log
+nohup.out
+
+# Model weights / caches
+*.safetensors
+*.bin
+*.pt

@@ -1,0 +1,34 @@
+*.tar
+*.csv
+*.json
+*.pyc
+*.out
+*.log
+*.ipynb
+*.sh
+*.ps1
+.pyc
+
+.env
+experiments.md
+agent5_token.md
+test.py
+
+token/
+attack/
+log/
+ps_list/
+paper/
+HeatMap/
+__pycache__/
+# Keep our setup/run scripts (overrides the *.sh rule above)
+!scripts/*.sh
+
+# Run outputs
+result/
+nohup.out
+test.txt
+
+# Downloaded datasets / model caches
+datasets/MMLU/data/
+*.safetensors

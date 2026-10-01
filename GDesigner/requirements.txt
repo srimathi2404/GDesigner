@@ -1,0 +1,39 @@
+# Minimal requirements, derived from actual imports in GDesigner/ and experiments/
+# (the upstream repo's requirements.txt was a raw pip-freeze from an unrelated dev
+# environment - UTF-16 encoded, full of Windows-only and irrelevant packages like
+# tensorflow/keras/gradio/jupyter that produced unresolvable version conflicts and
+# are never imported anywhere in this codebase). GPU-locked wheels (torch, torch_geometric
+# C-extensions) live in gpu-requirements.txt and are installed separately in Step 2.
+aiohttp==3.10.5
+arxiv==2.1.3
+astunparse==1.6.3
+beautifulsoup4==4.12.3
+charset-normalizer==3.3.2
+class-registry==2.1.2
+python-dotenv==1.0.0
+fastapi==0.109.2
+google-api-python-client==2.146.0
+huggingface-hub==0.25.0  # sentence-transformers==2.2.2 needs the removed cached_download() API
+Markdown==3.7
+numpy==1.26.4
+openai==1.46.0
+openpyxl==3.1.5
+pandas==1.5.3
+python-pptx==0.6.23
+pydantic==2.9.2
+pylatexenc==2.10
+PyPDF2==3.0.1
+pytube==15.0.0
+requests==2.32.3
+sentence-transformers==2.2.2
+shortuuid==1.0.11
+tenacity==8.5.0
+tiktoken==0.7.0
+tokenizers==0.19.1  # matches transformers==4.44.2
+tqdm==4.66.5
+transformers==4.44.2  # pinned: sentence-transformers==2.2.2 needs huggingface-hub<0.26, which caps transformers too
+wikipedia==1.4.0
+PyYAML==6.0.1
+httpx==0.25.2
+python-docx==1.1.2
+setuptools<81  # class-registry needs pkg_resources, which setuptools>=81 dropped

@@ -1,0 +1,19 @@
+# CUDA-locked wheels - installed separately from requirements.txt because they
+# come from the PyTorch/PyG wheel indexes, not plain PyPI. Installed by
+# scripts/install_gpu_deps.sh (torch install itself just needs a CUDA-capable
+# wheel to download; a GPU doesn't need to be free to install it, only to run
+# it - but keeping this separate avoids blocking the rest of the environment
+# setup on GPU-specific resolution issues).
+#
+# pyg-lib is deliberately omitted: its compiled .so requires GLIBC_2.29, and
+# this host's GLIBC is 2.28 (`ldd --version`) - the wheel cannot load here.
+# It's an optional accelerator for torch_geometric (torch_sparse falls back
+# cleanly when it's absent, per its typing.py try/except ImportError), so
+# skipping it costs some sparse-op performance but not correctness.
+torch==2.3.0
+torchvision==0.18.0
+torchaudio==2.3.0
+torch-geometric==2.6.1
+torch_cluster==1.6.3
+torch_scatter==2.1.2
+torch_sparse==0.6.18
